@@ -37,6 +37,7 @@ lazy val root = project
     "utf-8"),
     
     jacocoExcludes := Seq(
+      "*fileIOComponent.*",
       "*aview.*",
       "*Chess.*",
       "*GameData.*",
