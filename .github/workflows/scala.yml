@@ -31,9 +31,11 @@ jobs:
         run: |
           export CI_BRANCH="${GITHUB_REF#refs/heads/}"
           sbt clean jacoco jacocoCoveralls
+      - name: Run tests for Codecov
+        run: sbt jacoco
       - name: Download Codecov
         run: curl -Os https://uploader.codecov.io/latest/linux/codecov
       - name: Add x Flag
         run: chmod +x codecov
       - name: Run Codecov
-        run: ./codecov -t ${{ secrets.CODECOV_TOKEN }}
+        run: ./codecov -t ${{ secrets.CODECOV_TOKEN }} 
