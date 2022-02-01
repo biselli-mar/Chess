@@ -3,13 +3,17 @@
   <h1 align="center">CHESS</h3>
 </p>
 
+[![Coverage Status]()]()
+
 <p align="center">
-  <img src="https://github.com/emanuelk02/Chess/actions/workflows/scala.yml/badge.svg?branch=main" /> 
-  <a href="https://coveralls.io/github/emanuelk02/Chess?branch=main">
-    <img src="https://coveralls.io/repos/github/emanuelk02/Chess/badge.svg?branch=main" />
+  <a href="https://github.com/biselli-mar/Chess/actions/workflows/scala.yml">
+    <img src="https://github.com/biselli-mar/Chess/actions/workflows/scala.yml/badge.svg?branch=main" /> 
   </a>
-  <a href="https://codecov.io/gh/emanuelk02/Chess">
-    <img src="https://codecov.io/gh/emanuelk02/Chess/branch/main/graph/badge.svg?token=UFUM75SWX4)](https://codecov.io/gh/emanuelk02/Chess" />
+  <a href="https://coveralls.io/github/biselli-mar/Chess?branch=main">
+    <img src="https://coveralls.io/repos/github/biselli-mar/Chess/badge.svg?branch=main" />
+  </a>
+  <a href="https://codecov.io/gh/biselli-mar/Chess">
+    <img src="https://codecov.io/gh/biselli-mar/Chess/branch/main/graph/badge.svg?token=UFUM75SWX4)" />
   </a>
 </p>
   
