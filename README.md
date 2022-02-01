@@ -3,8 +3,6 @@
   <h1 align="center">CHESS</h3>
 </p>
 
-[![Coverage Status]()]()
-
 <p align="center">
   <a href="https://github.com/biselli-mar/Chess/actions/workflows/scala.yml">
     <img src="https://github.com/biselli-mar/Chess/actions/workflows/scala.yml/badge.svg?branch=main" /> 
