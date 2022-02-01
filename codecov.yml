@@ -7,7 +7,7 @@ ignore:
   - "**/TileLabel.scala"
   - "**/Chess.scala"
   - "**/resources/"
-  - "**/fileIOComponent/"
+  - "**/fileIOComponent/**"
 
 coverage:
   status:
