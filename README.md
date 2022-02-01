@@ -5,10 +5,10 @@
 
 <p align="center">
   <a href="https://github.com/biselli-mar/Chess/actions/workflows/scala.yml">
-    <img src="https://github.com/biselli-mar/Chess/actions/workflows/scala.yml/badge.svg?branch=main" /> 
+    <img src="https://github.com/biselli-mar/Chess/actions/workflows/scala.yml/badge.svg?branch=main"/> 
   </a>
   <a href="https://coveralls.io/github/biselli-mar/Chess?branch=main">
-    <img src="https://coveralls.io/repos/github/biselli-mar/Chess/badge.svg?branch=main" />
+    <img src="https://coveralls.io/repos/github/biselli-mar/Chess/badge.svg?branch=main"/>
   </a>
   <a href="https://codecov.io/gh/biselli-mar/Chess">
     <img src="https://codecov.io/gh/biselli-mar/Chess/branch/main/graph/badge.svg?token=UFUM75SWX4)" />
