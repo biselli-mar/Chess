@@ -101,6 +101,15 @@ trait GameField (field: Matrix[Option[Piece]]) {
     def move(tile1: Tile, tile2: Tile): GameField
 
     /**
+     * Moves contents of one tile inte another tile.
+     * Moving is done without extra condition checks or validity.
+     * @param tile1     Source tile
+     * @param tile2     Destination tile
+     * @return          The same field but with the moved piece
+     * */
+    def rawMove(tile1: Tile, tile2: Tile): GameField
+
+    /**
      * Returns a list of all tiles the piece in given tile can move to.
      * Returned tiles are fully legal and respect check.
      * For empty tiles an empty list is returned.
@@ -108,6 +117,15 @@ trait GameField (field: Matrix[Option[Piece]]) {
      * @return          List of tiles which are legal to move to
      */
     def getLegalMoves(tile: Tile): List[Tile]
+
+    /**
+     * Returns a list of all tiles the piece in given tile can move to.
+     * Returned tiles are fully legal and respect check.
+     * For empty tiles an empty list is returned.
+     * @param tile      Source tile
+     * @return          List of tiles which are legal to move to
+     */
+    def isAttacked(tile: Tile): Boolean
 
     /**
      * Gives the tile on which the king of the current color is on.

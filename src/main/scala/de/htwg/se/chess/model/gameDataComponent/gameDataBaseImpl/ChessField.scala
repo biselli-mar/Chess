@@ -62,9 +62,7 @@ case class ChessField @Inject() (
              && cell(in(0)).get.getType == Pawn
              && state.enPassant.get == in(1)
              then Some(ChessField(
-                doEnPassant(in(1), field)
-                  .replace(in(1).row, in(1).col, cell(in(0)))
-                  .replace(in(0).row, in(0).col, None ),
+                doEnPassant(in(1), in(2).field),
                 state.evaluateMove((in(0), in(1)), cell(in(0)).get, cell(in(1))).copy(color = state.color)
               ))
              else None
@@ -94,7 +92,7 @@ case class ChessField @Inject() (
       ChessField(
         field.replace(tile2.row, tile2.col, piece)
              .replace(tile1.row, tile1.col, None ),
-        state.evaluateMove((tile1, tile2), cell(tile1).get, cell(tile2)).copy(color = state.color)
+        state.evaluateMove((tile1, tile2), piece.get, cell(tile2)).copy(color = state.color)
       )
 
     tempField = specialMoveChain.handleRequest((tile1, tile2, tempField)).getOrElse(tempField)
@@ -114,6 +112,15 @@ case class ChessField @Inject() (
     val newGameState = gameStateChain.handleRequest(ret).get
 
     ret.copy(gameState = newGameState)
+  }
+
+  override def rawMove(tile1: Tile, tile2: Tile): GameField = {
+    val piece = cell(tile1)
+    ChessField(
+        field.replace(tile2.row, tile2.col, piece)
+             .replace(tile1.row, tile1.col, None ),
+        state.evaluateMove((tile1, tile2), piece.get, cell(tile2)).copy(color = state.color)
+      )
   }
 
   override def getLegalMoves(tile: Tile): List[Tile] =
@@ -328,7 +335,7 @@ case class ChessField @Inject() (
         )
         .appendedAll(doublePawnChain(in))
   
-  def isAttacked(tile: Tile): Boolean = reverseAttackChain.handleRequest(tile).get
+  override def isAttacked(tile: Tile): Boolean = reverseAttackChain.handleRequest(tile).get
 
   private val reverseAttackChain = ChainHandler[Tile, Boolean] (List[Tile => Option[Boolean]]
     (
